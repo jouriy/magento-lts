@@ -180,7 +180,7 @@ class Mage_Core_Model_Cookie
      *
      * @return string
      */
-    public function getSameSite(): string
+    public function getSameSite()
     {
         $sameSite = Mage::getStoreConfig(self::XML_PATH_COOKIE_SAMESITE, $this->getStore());
         if (is_null($sameSite)) {
