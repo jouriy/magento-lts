@@ -500,7 +500,7 @@ class Mage_Core_Model_Cache
                 $this->_allowedCacheOptions = array();
             }
         } else {
-            $this->_allowedCacheOptions = unserialize($options, ['allowed_classes' => false]);
+            $this->_allowedCacheOptions = unserialize($options);
         }
 
         if (Mage::getConfig()->getOptions()->getData('global_ban_use_cache')) {
@@ -611,7 +611,7 @@ class Mage_Core_Model_Cache
     {
         $types = $this->load(self::INVALIDATED_TYPES);
         if ($types) {
-            $types = unserialize($types, ['allowed_classes' => false]);
+            $types = unserialize($types);
         } else {
             $types = array();
         }

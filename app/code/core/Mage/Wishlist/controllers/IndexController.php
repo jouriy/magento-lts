@@ -755,7 +755,7 @@ class Mage_Wishlist_IndexController extends Mage_Wishlist_Controller_Abstract
         }
 
         try {
-            $info      = unserialize($option->getValue(), ['allowed_classes' => false]);
+            $info      = unserialize($option->getValue());
             $filePath  = Mage::getBaseDir() . $info['quote_path'];
             $secretKey = $this->getRequest()->getParam('key');
 

@@ -580,7 +580,7 @@ class Mage_Adminhtml_Model_Sales_Order_Create extends Varien_Object implements M
                         $info = $item->getOptionByCode('info_buyRequest');
                         if ($info) {
                             $info = new Varien_Object(
-                                unserialize($info->getValue(), ['allowed_classes' => false])
+                                unserialize($info->getValue())
                             );
                             $info->setQty($qty);
                             $info->setOptions($this->_prepareOptionsForRequest($item));
@@ -1511,7 +1511,7 @@ class Mage_Adminhtml_Model_Sales_Order_Create extends Varien_Object implements M
             }
             $addOptions = $item->getOptionByCode('additional_options');
             if ($addOptions) {
-                $options['additional_options'] = unserialize($addOptions->getValue(), ['allowed_classes' => false]);
+                $options['additional_options'] = unserialize($addOptions->getValue());
             }
             $item->setProductOrderOptions($options);
         }

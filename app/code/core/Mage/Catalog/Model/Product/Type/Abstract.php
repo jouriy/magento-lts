@@ -602,7 +602,7 @@ abstract class Mage_Catalog_Model_Product_Type_Abstract
     {
         $optionArr = array();
         if ($info = $this->getProduct($product)->getCustomOption('info_buyRequest')) {
-            $optionArr['info_buyRequest'] = unserialize($info->getValue(), ['allowed_classes' => false]);
+            $optionArr['info_buyRequest'] = unserialize($info->getValue());
         }
 
         if ($optionIds = $this->getProduct($product)->getCustomOption('option_ids')) {
